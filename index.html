@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>nix — прелоадер</title>
+    <style>
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        background-color: #000;
+        color: white;
+        font-family: "Segoe UI", sans-serif;
+        height: 100%;
+        width: 100%;
+        overflow: hidden;
+      }
+
+      .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        height: 100%;
+        width: 100%;
+        padding-left: 8vw;
+        position: relative;
+        box-sizing: border-box;
+      }
+
+      .logo-text {
+        z-index: 2;
+      }
+
+      .logo-text h1 {
+        font-size: 2.2rem;
+        margin: 0;
+      }
+
+      .logo-text p {
+        font-size: 0.95rem;
+        color: #aaa;
+      }
+
+      .circle {
+        position: absolute;
+        right: -12%;
+        top: 50%;
+        transform: translateY(-50%) rotate(0deg);
+        width: 60vmin;
+        height: 60vmin;
+        border-radius: 50%;
+        background: conic-gradient(from 0deg, #ffee00, #00aaff);
+        mask-image: radial-gradient(farthest-side, transparent 50%, black 51%);
+        -webkit-mask-image: radial-gradient(
+          farthest-side,
+          transparent 80%,
+          black 71%
+        );
+        animation: spin-gradient 4s linear infinite;
+      }
+
+      @keyframes spin-gradient {
+        0% {
+          transform: translateY(-50%) rotate(0deg);
+        }
+        100% {
+          transform: translateY(-50%) rotate(360deg);
+        }
+      }
+
+      @media (max-width: 400px) {
+        .circle {
+          width: 80vmin;
+          height: 80vmin;
+          right: -50%;
+        }
+
+        .logo-text h1 {
+          font-size: 1.8rem;
+        }
+
+        .logo-text p {
+          font-size: 0.85rem;
+          margin-top: 4px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="logo-text">
+        <h1>nix</h1>
+        <p>Навигация по каналу</p>
+      </div>
+      <div class="circle"></div>
+    </div>
+
+    <script>
+      // Через 2 секунды переход на следующий экран
+      setTimeout(() => {
+        window.location.href = "Subscribe.html"; // поменяешь путь на нужный тебе
+      }, 2000);
+    </script>
+  </body>
+</html>
